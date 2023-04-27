@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Esteban:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <h1>James Beach - Dev Portfolio</h1>
+            <nav>
+                <ul>
+                    <li><a href="./index.html" class="header-btn">Projects</a></li>
+                    <li><a href="./aboutme.html" class="header-btn">About Me</a></li>
+                    <li><a href="#footer" class="header-btn">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h2>Projects</h2>
+        <section class="projects">
+            <div class="project">
+                <img src="./images/raytracer-poc-thumb.JPG" alt="Ray Tracing Proof of Concept Thumbnail">
+                <h3>Ray Tracing - Proof of Concept</h3>
+                <button class="modal-btn" data-target-modal="modal1">More Info</button>
+            </div>
+            <div class="project">
+                <img src="./images/raytracer-gpu-thumb.JPG" alt="Vulkan Ray Tracing Thumbnail">
+                <h3>Vulkan Ray Tracing</h3>
+                <button class="modal-btn" data-target-modal="modal2">More Info</button>
+            </div>
+            <div class="project">
+                <img src="./images/campfirescene_thumb.png" alt="Campfire Scene Render Thumbnail">
+                <h3>Blender Campfire Scene Render</h3>
+                <button class="modal-btn" data-target-modal="modal3">More Info</button>
+            </div>
+            <div class="project">
+                <img src="./images/action_adv_thumb.png" alt="Action Adventure Game Thumbnail">
+                <h3>Action Adventure Game Prototype</h3>
+                <button class="modal-btn" data-target-modal="modal4">More Info</button>
+            </div>
+            <div class="project">
+                <img src="./images/drawdojo_thumb.JPG" alt="Draw Dojo Thumbnail">
+                <h3>DrawDojo - Creative Social Media Platform</h3>
+                <button class="modal-btn" data-target-modal="modal5">More Info</button>
+            </div>
+            <div class="project">
+                <img src="./images/convex_hull_thumb.png" alt="Convex Hull Thumbnail">
+                <h3>Javscript Convex Hull Implementation</h3>
+                <button class="modal-btn" data-target-modal="modal6">More Info</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Project 1 Modal -->
+    <div id="modal1" class="modal">
+        <div class="model-wrapper">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h3>Details</h3>
+                <p>
+                    This project is a proof-of-concept ray tracer program that uses the Vulkan API and a Monte-Carlo
+                    path
+                    tracing algorithm to render sphere primitives. The program features interactivity, allowing users to
+                    move, scale, and change the material of objects in the scene, as well as edit material properties
+                    such as albedo, roughness, and refractive index. The program also supports camera movement, enabling
+                    different perspectives on the virtual environment.
+                    <br><br>
+                    This was written in preparation for my 4th year dissertation, where I tasked myself with producing a
+                    more in-depth ray tracer which runs in parallel on the GPU.
+                    <br><br>
+                    <a href="https://github.com/JamesBeach1/RayTracing-Template">Link to Project</a>
+                </p>
+                <div class="slideshow-container">
+                    <img class="slide" src="./images/rt_poc_images/screencap1.JPG" alt="Image 1">
+                    <img class="slide" src="./images/rt_poc_images/screencap2.JPG" alt="Image 2">
+                    <button class="prev-slide" onclick="changeSlide(-1, this, this.parentElement)">&#10094;</button>
+                    <button class="next-slide" onclick="changeSlide(1, this, this.parentElement)">&#10095;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project 2 Modal -->
+    <div id="modal2" class="modal">
+        <div class="model-wrapper">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h3>Details</h3>
+                <p>
+                    This project is a Vulkan-based ray tracer, written in C++, that adapts an Nvidia DesignWorks Samples
+                    tutorial. It uses the Khronos Group Vulkan extension VK_KHR_ray_tracing_pipeline and employs a
+                    Monte-Carlo path tracing technique, which is executed on the GPU using compute shaders. The path
+                    tracing is implemented through the use of a closest hit shader, a ray generation shader, and a miss
+                    shader. Additionally, it uses a bounding volume hierarchy acceleration structure, which is a
+                    technique for efficiently traversing a large number of objects in a scene. Overall, the project is
+                    designed to showcase the capabilities of the Vulkan API for real-time ray tracing and demonstrate
+                    the use of advanced techniques for optimizing rendering performance through the use of GPU
+                    processing.
+                    <br><br>
+                    This project was developed for use in my 4th year research project, it may continue development
+                    either through this repository, or a new one.
+                    <br><br>
+                    <a href="https://github.com/JamesBeach1/RayTracingInVulkan">Link to Project</a>
+                </p>
+                <div class="slideshow-container">
+                    <img class="slide" src="./images/rt_vulkan_images/screencap1.png" alt="Image 1">
+                    <img class="slide" src="./images/rt_vulkan_images/screencap2.png" alt="Image 2">
+                    <img class="slide" src="./images/rt_vulkan_images/screencap3.png" alt="Image 3">
+                    <img class="slide" src="./images/rt_vulkan_images/screencap4.png" alt="Image 4">
+                    <button class="prev-slide" onclick="changeSlide(-1, this, this.parentElement)">&#10094;</button>
+                    <button class="next-slide" onclick="changeSlide(1, this, this.parentElement)">&#10095;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Project 3 Modal -->
+    <div id="modal3" class="modal">
+        <div class="model-wrapper">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h3>Details</h3>
+                <p>
+                    This project served as my introduction to 3D modelling and design in Blender, additional, smaller
+                    projects were also developed in Unreal Engine 5 and openGL. Included is the modelling and design
+                    process of each component that makes up the scene, a long with a discussion of the lighting
+                    configuration used.
+                    <br><br>
+                    For more details of the implementation and design, visit the repository below:
+                    <br><br>
+                    <a href="https://github.com/JamesBeach1/CampfireScene-Render">Link to Project</a>
+                </p>
+                <div class="slideshow-container">
+                    <img class="slide" src="./images/campfire_scene_images/screencap1.png" alt="Image 1">
+                    <img class="slide" src="./images/campfire_scene_images/screencap2.png" alt="Image 2">
+                    <img class="slide" src="./images/campfire_scene_images/screencap3.png" alt="Image 3">
+                    <img class="slide" src="./images/campfire_scene_images/screencap4.png" alt="Image 4">
+                    <img class="slide" src="./images/campfire_scene_images/screencap5.png" alt="Image 5">
+                    <button class="prev-slide" onclick="changeSlide(-1, this, this.parentElement)">&#10094;</button>
+                    <button class="next-slide" onclick="changeSlide(1, this, this.parentElement)">&#10095;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Project 4 Modal -->
+    <div id="modal4" class="modal">
+        <div class="model-wrapper">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h3>Details</h3>
+                <p>
+                    This is an action-adventure game prototype that draws inspiration from popular titles in the genre,
+                    such as Diablo and Path of Exile. The game features fierce enemies, powerful loot, and customizable
+                    character armor rigging and spells. The loot system is tiered, and levels are carefully designed
+                    with destructible objects to add realism to the gameplay. The player controller uses a hierarchical
+                    state machine with various sub-states, while the user interface features health and mana globes, a
+                    hotbar for selecting skills, and an inventory system for managing items. This prototype also
+                    includes a medieval fantasy-themed outdoor environment with a castle, dungeon, and merchant NPC for
+                    trading items.
+                    <br><br>
+                    This was built as a one time group project and will not be continuing development, although
+                    derivative projects may be built in the future.
+                    <br><br>
+                    <a href="https://github.com/JamesBeach1/ActionAdventureGame">Link to Project</a>
+                </p>
+                <div class="slideshow-container">
+                    <img class="slide" src="./images/action_adv_images/screencap1.png" alt="Image 1">
+                    <img class="slide" src="./images/action_adv_images/screencap2.gif" alt="Image 2">
+                    <img class="slide" src="./images/action_adv_images/screencap3.jpg" alt="Image 3">
+                    <img class="slide" src="./images/action_adv_images/screencap4.png" alt="Image 4">
+                    <button class="prev-slide" onclick="changeSlide(-1, this, this.parentElement)">&#10094;</button>
+                    <button class="next-slide" onclick="changeSlide(1, this, this.parentElement)">&#10095;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Project 5 Modal -->
+    <div id="modal5" class="modal">
+        <div class="model-wrapper">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h3>Details</h3>
+                <p>
+                    DrawDojo is a social media platform developed for a 3rd year group project. It features a real-time
+                    interactive drawing tool that allows users to paint on the same canvas, as well as a live chat for
+                    communication. Completed paintings are posted to a feed where users can like, comment, or iterate on
+                    them. The platform also includes a profile feature that lists all of a user's posts in one place.
+                    <br><br>
+                    This project was designed with a unique identity in mind. Although it shares some similarities with
+                    other social media platforms, such as Instagram, every aspect of DrawDojo, including the color
+                    scheme, was carefully chosen to give it a distinct and memorable identity.
+                    <br><br>
+                    This platform was built using 2 decoupled pieces, the user interface, written in React and Typescript. And a backend, using express, mongoDB, socket.IO, and Docker.
+                    <br><br>
+                    <a href="https://github.com/JamesBeach1/DrawDojo_UI">Link to Project UI</a>
+                    <a href="https://github.com/JamesBeach1/DrawDojo_API">Link to Project Backend</a>
+                </p>
+                <div class="slideshow-container">
+                    <img class="slide" src="./images/drawdojo_images/screencap1.png" alt="Image 1">
+                    <img class="slide" src="./images/drawdojo_images/screencap2.png" alt="Image 2">
+                    <button class="prev-slide" onclick="changeSlide(-1, this, this.parentElement)">&#10094;</button>
+                    <button class="next-slide" onclick="changeSlide(1, this, this.parentElement)">&#10095;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Project 6 Modal -->
+    <div id="modal6" class="modal">
+        <div class="model-wrapper">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h3>Details</h3>
+                <p>
+                    This is a mini-project, mostly just to gain experience in javascript, and test p5.js. It generates a
+                    group of points on a canvas, and generates the convex hull around those points. The user can add or
+                    remove to the total number of points using a slider.
+                    <br><br>
+                    A convex hull is the smallest convex polygon that completely encloses a set of points. In other
+                    words, if you imagine laying a piece of string around a group of points and then pulling it tight,
+                    the resulting shape would be the convex hull.
+                    <br><br>
+                    The Graham scan algorithm, which is used in this project, is a popular algorithm for finding the
+                    convex hull of a set of points in
+                    2D space. It works by first finding the point with the lowest y-coordinate (or the leftmost point in
+                    case of a tie), which must be a vertex of the convex hull. Then, it sorts all the remaining points
+                    by their polar angle with respect to this anchor point, and removes any that would create a concave
+                    angle if added to the hull. This is repeated until all the points have been added to the hull.
+                    <br><br>
+                    <a href="https://github.com/JamesBeach1/convex-hull-JS">Link to Project</a>
+                </p>
+                <div class="slideshow-container">
+                    <img class="slide" src="./images/convex_hull_images/screencap1.PNG" alt="Image 1">
+                    <button class="prev-slide" onclick="changeSlide(-1, this, this.parentElement)">&#10094;</button>
+                    <button class="next-slide" onclick="changeSlide(1, this, this.parentElement)">&#10095;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section id="footer">
+        <footer>
+            <div class="footer-container">
+                <p>Contact Me At:</p>
+                <p>james.beach.98@gmail.com</p>
+                <p>07306 885470</p>
+                <p>
+                    <a href="./cv.pdf" download>Download CV</a>
+                </p>
+            </div>
+        </footer>
+    </section>
+</body>
+
+</html>
