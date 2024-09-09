@@ -260,3 +260,28 @@ footer {
     max-width: 800px;
     margin: 0 auto;
 }
+
+ul {
+    padding-left: 1.5rem; /* Add padding to the left for indentation */
+}
+
+ul li {
+    margin-bottom: 1rem; /* Add space between list items */
+    line-height: 1.6; /* Improve readability */
+}
+
+.container p {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.container ul {
+    padding-left: 2rem;
+    margin: 1rem 0;
+    list-style-type: disc;
+}
+
+.container ul li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
